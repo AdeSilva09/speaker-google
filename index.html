@@ -3,925 +3,853 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PROMO 50% - META Ns Alat Pencacah Serut Sayur & Buah | Hemat Waktu Masak!</title>
-<meta name="description" content="Alat pencacah serut sayur & buah META Ns - 8 mata pisau premium, anti slip, mudah dibersihkan. Promo 50% hari ini, stok terbatas!" />
+<title>G-Lamp Pro X — Bluetooth Night Light Speaker</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
-    --primary: #e63946;
-    --primary-dark: #c1121f;
-    --accent: #ffb703;
-    --green: #2a9d8f;
-    --green-dark: #21867a;
-    --dark: #1d3557;
-    --light: #f8f9fa;
-    --gray: #6c757d;
-    --whatsapp: #25d366;
+    --bg: #f4f7ff;
+    --bg-soft: #ffffff;
+    --bg-tint: #eef2ff;
+    --primary: #4f46e5;
+    --primary-dark: #3730a3;
+    --accent: #06b6d4;
+    --pink: #ec4899;
+    --gold: #f59e0b;
+    --text: #1e1b4b;
+    --text-soft: #475569;
+    --text-dim: #94a3b8;
+    --border: #e2e8f0;
+    --shadow: 0 8px 28px rgba(79,70,229,.12);
+    --shadow-lg: 0 20px 50px rgba(79,70,229,.18);
   }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #fff;
-    color: #222;
+    font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
     line-height: 1.6;
-    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    max-width: 480px;
+    margin: 0 auto;
+    box-shadow: 0 0 60px rgba(0,0,0,.08);
+    min-height: 100vh;
+    position: relative;
+  }
+  /* Soft gradient background */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 480px;
+    height: 600px;
+    background:
+      radial-gradient(ellipse at top left, rgba(79,70,229,.10), transparent 60%),
+      radial-gradient(ellipse at top right, rgba(6,182,212,.10), transparent 60%);
+    z-index: -1;
+    pointer-events: none;
   }
 
-  /* TOP BAR */
-  .top-bar {
-    background: linear-gradient(90deg, var(--primary-dark), var(--primary));
-    color: #fff;
-    text-align: center;
-    padding: 10px 12px;
-    font-size: 14px;
-    font-weight: 600;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 8px rgba(0,0,0,.15);
+  img { max-width: 100%; display: block; }
+
+  /* URGENCY BAR */
+  .urgency {
+    background: linear-gradient(90deg, var(--primary), var(--pink));
+    color: #fff; text-align: center;
+    padding: 8px 14px;
+    font-weight: 700; font-size: 12px;
+    letter-spacing: .3px;
   }
-  .top-bar .blink { animation: blink 1.2s infinite; }
-  @keyframes blink { 50% { opacity: .35; } }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(16px);
+    background: rgba(255,255,255,.85);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 18px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .logo {
+    font-weight: 900; font-size: 18px; letter-spacing: 1.5px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .nav-cta {
+    padding: 8px 16px; border-radius: 999px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    color: #fff; font-weight: 700; text-decoration: none;
+    font-size: 13px;
+    box-shadow: 0 4px 14px rgba(79,70,229,.35);
+  }
 
   /* HERO */
   .hero {
-    background: linear-gradient(135deg, #fff5f5 0%, #fff 60%);
-    padding: 24px 16px 32px;
+    padding: 26px 18px 20px;
+    text-align: center;
   }
-  .container { max-width: 720px; margin: 0 auto; }
-  .badge-row {
-    display: flex; gap: 8px; flex-wrap: wrap;
-    justify-content: center; margin-bottom: 14px;
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 14px; border-radius: 999px;
+    background: var(--bg-tint);
+    border: 1px solid rgba(79,70,229,.2);
+    color: var(--primary); font-size: 11px; font-weight: 700;
+    margin-bottom: 14px;
+    letter-spacing: .5px;
   }
-  .badge {
-    background: var(--accent); color: #222;
-    font-size: 12px; font-weight: 700;
-    padding: 5px 12px; border-radius: 20px;
-    text-transform: uppercase; letter-spacing: .5px;
+  .hero h1 {
+    font-size: 28px;
+    font-weight: 900; line-height: 1.2;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
   }
-  .badge.red { background: var(--primary); color: #fff; }
-  .badge.green { background: var(--green); color: #fff; }
+  .hero h1 .grad {
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .hero p.lead {
+    font-size: 15px; color: var(--text-soft);
+    margin-bottom: 20px;
+  }
 
-  h1 {
-    font-size: 28px; line-height: 1.25; text-align: center;
-    color: var(--dark); margin-bottom: 8px; font-weight: 800;
+  .hero-img-wrap {
+    position: relative;
+    margin: 16px 0 24px;
+    padding: 18px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #ffffff, var(--bg-tint));
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border);
   }
-  h1 .hl { color: var(--primary); }
-  .subtitle {
-    text-align: center; color: var(--gray);
-    font-size: 16px; margin-bottom: 18px;
+  .hero-img-wrap img {
+    border-radius: 16px;
+    width: 100%;
+  }
+  .floating-tag {
+    position: absolute; padding: 6px 12px; border-radius: 999px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,.1);
+    border: 1px solid var(--border);
+    color: var(--primary);
+    font-weight: 700; font-size: 11px;
+    animation: float 4s ease-in-out infinite;
+  }
+  .floating-tag.t1 { top: 8%; left: -6px; }
+  .floating-tag.t2 { top: 45%; right: -6px; animation-delay: 1s; color: var(--pink); }
+  .floating-tag.t3 { bottom: 8%; left: 8%; animation-delay: 2s; color: var(--accent); }
+  @keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
   }
 
-  .product-img {
-    background: #fff; border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.12);
-    overflow: hidden; margin-bottom: 18px; position: relative;
-  }
-  .product-img .placeholder {
-    aspect-ratio: 1/1;
-    background: linear-gradient(135deg, #ffe5e5, #fff0d6);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 96px;
-  }
-  .thumb-row {
+  .hero-stats {
     display: grid; grid-template-columns: repeat(3, 1fr);
     gap: 8px; margin-bottom: 18px;
   }
-  .thumb-row img {
-    width: 100%; aspect-ratio: 1/1; object-fit: cover;
-    border-radius: 10px; border: 2px solid #fff;
-    box-shadow: 0 4px 12px rgba(0,0,0,.1);
-    cursor: pointer; transition: transform .2s;
+  .stat {
+    background: #fff;
+    padding: 12px 8px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
   }
-  .thumb-row img:hover { transform: scale(1.05); }
+  .stat strong {
+    display: block; font-size: 18px; font-weight: 900;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .stat span { font-size: 10px; color: var(--text-dim); }
 
-  .demo-gif {
-    width: 100%; border-radius: 14px; display: block;
-    box-shadow: 0 8px 24px rgba(0,0,0,.12);
-    margin: 0 auto 14px;
-  }
-  .gallery-wrap {
-    max-width: 560px; margin: 0 auto;
-    display: grid; gap: 14px;
-  }
-  .gallery-wrap img {
-    width: 100%; border-radius: 14px; display: block;
-    box-shadow: 0 6px 18px rgba(0,0,0,.1);
-  }
-  .gallery-caption {
-    text-align: center; font-size: 13px;
-    color: var(--gray); margin-top: -6px;
-  }
-  .seal-row {
-    display: flex; gap: 16px; justify-content: center;
-    flex-wrap: wrap; margin-top: 18px;
-  }
-  .seal-row img {
-    height: 80px; width: auto;
-  }
-  .payment-row {
-    display: flex; gap: 12px; justify-content: center;
-    align-items: center; flex-wrap: wrap;
-    margin-top: 14px; padding: 12px;
-    background: #fff; border-radius: 10px;
-  }
-  .payment-row img { height: 38px; width: auto; }
-  .payment-row span { font-size: 12px; color: var(--gray); }
-  .discount-tag {
-    position: absolute; top: 14px; right: 14px;
-    background: var(--primary); color: #fff;
-    width: 70px; height: 70px; border-radius: 50%;
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    font-weight: 800; box-shadow: 0 4px 12px rgba(230,57,70,.5);
-    animation: pulse 1.8s infinite;
-  }
-  .discount-tag .num { font-size: 22px; line-height: 1; }
-  .discount-tag .lbl { font-size: 10px; }
-  @keyframes pulse {
-    0%,100% { transform: scale(1); }
-    50% { transform: scale(1.08); }
-  }
-
-  /* RATING */
-  .rating-row {
-    display: flex; justify-content: center; gap: 18px;
-    flex-wrap: wrap; margin-bottom: 16px;
-    background: #fff; padding: 12px; border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,.06);
-  }
-  .rating-item { text-align: center; }
-  .rating-item .val { font-size: 18px; font-weight: 800; color: var(--dark); }
-  .rating-item .lbl { font-size: 11px; color: var(--gray); }
-  .stars { color: var(--accent); }
-
-  /* PRICE BOX */
-  .price-box {
-    background: #fff; border: 3px dashed var(--primary);
-    border-radius: 16px; padding: 18px; text-align: center;
+  .price-block {
+    display: flex; justify-content: center; align-items: baseline; gap: 10px;
     margin-bottom: 16px;
   }
-  .price-old { color: var(--gray); text-decoration: line-through; font-size: 18px; }
+  .price-old { text-decoration: line-through; color: var(--text-dim); font-size: 16px; }
   .price-new {
-    font-size: 38px; font-weight: 800;
-    color: var(--primary); margin: 4px 0;
+    font-size: 30px; font-weight: 900; color: var(--primary);
   }
-  .save-tag {
-    display: inline-block; background: var(--green);
-    color: #fff; padding: 4px 12px; border-radius: 20px;
-    font-size: 13px; font-weight: 700;
+  .disc-pill {
+    background: var(--pink); color: #fff; padding: 3px 10px;
+    border-radius: 999px; font-weight: 700; font-size: 11px;
   }
+
+  .btn-primary {
+    display: block; width: 100%;
+    padding: 16px 20px; border-radius: 14px; border: none; cursor: pointer;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    color: #fff; font-weight: 800; font-size: 15px;
+    text-decoration: none; text-align: center;
+    box-shadow: 0 8px 24px rgba(79,70,229,.4);
+    transition: all .2s;
+    font-family: inherit;
+  }
+  .btn-primary:active { transform: scale(.97); }
+
+  .trust {
+    margin-top: 14px; display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 8px 14px;
+    font-size: 12px; color: var(--text-soft);
+  }
+  .trust span::before { content:'✓'; color: var(--accent); margin-right: 4px; font-weight: 800; }
 
   /* COUNTDOWN */
   .countdown {
-    background: var(--dark); color: #fff;
-    padding: 14px; border-radius: 12px; text-align: center;
-    margin-bottom: 16px;
+    margin: 18px;
+    padding: 18px;
+    background: linear-gradient(135deg, #fff, var(--bg-tint));
+    border: 1px solid rgba(79,70,229,.2);
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: var(--shadow);
   }
-  .countdown .label { font-size: 13px; margin-bottom: 8px; }
+  .countdown h3 { font-size: 14px; margin-bottom: 12px; color: var(--text); }
+  .countdown h3 span { color: var(--pink); font-weight: 800; }
   .timer { display: flex; justify-content: center; gap: 8px; }
-  .timer .box {
-    background: var(--primary); padding: 8px 10px;
-    border-radius: 8px; min-width: 55px;
+  .time-box {
+    background: var(--primary);
+    border-radius: 10px;
+    padding: 10px 12px;
+    min-width: 56px;
+    color: #fff;
   }
-  .timer .num { font-size: 22px; font-weight: 800; display: block; }
-  .timer .unit { font-size: 10px; opacity: .85; }
+  .time-box strong {
+    display: block; font-size: 22px; font-weight: 900;
+  }
+  .time-box span { font-size: 9px; opacity: .85; text-transform: uppercase; letter-spacing: 1px; }
 
-  /* STOCK */
-  .stock-warn {
-    background: #fff3cd; border-left: 4px solid var(--accent);
-    padding: 10px 14px; border-radius: 8px; font-size: 14px;
-    margin-bottom: 16px;
+  /* SECTIONS GENERIC */
+  section { padding: 36px 18px; }
+  .section-title {
+    text-align: center; margin-bottom: 24px;
   }
-  .stock-bar {
-    background: #eee; height: 10px; border-radius: 10px;
-    overflow: hidden; margin-top: 6px;
+  .section-title small {
+    display: inline-block; padding: 4px 12px; border-radius: 999px;
+    background: var(--bg-tint); color: var(--primary);
+    border: 1px solid rgba(79,70,229,.25);
+    font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 800;
+    margin-bottom: 10px;
   }
-  .stock-bar .fill {
+  .section-title h2 {
+    font-size: 24px; font-weight: 900;
+    line-height: 1.25;
+    letter-spacing: -0.3px;
+  }
+  .section-title h2 .grad {
     background: linear-gradient(90deg, var(--primary), var(--accent));
-    height: 100%; width: 88%;
-    animation: fill 2s ease-out;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
   }
-  @keyframes fill { from { width: 0; } }
-
-  /* CTA BUTTONS */
-  .cta-wrap { display: flex; flex-direction: column; gap: 12px; margin-bottom: 12px; }
-  .btn {
-    position: relative;
-    display: inline-flex; align-items: center; justify-content: center;
-    gap: 10px; padding: 16px 24px;
-    border-radius: 14px;
-    font-size: 16px; font-weight: 700;
-    font-family: inherit;
-    text-decoration: none;
-    letter-spacing: .2px;
-    border: none; cursor: pointer;
-    transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
-    overflow: hidden;
-  }
-  .btn::after {
-    content: ''; position: absolute; inset: 0;
-    border-radius: inherit;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,.25);
-    pointer-events: none;
-  }
-  .btn:hover { transform: translateY(-2px); }
-  .btn:active { transform: translateY(0); }
-
-  .btn-order {
-    background: #e63946;
-    color: #fff;
-    box-shadow: 0 4px 14px rgba(230,57,70,.28);
-  }
-  .btn-order:hover {
-    background: #d12d3a;
-    box-shadow: 0 8px 22px rgba(230,57,70,.36);
-  }
-
-  .btn-wa {
-    background: #25d366;
-    color: #fff;
-    box-shadow: 0 4px 14px rgba(37,211,102,.28);
-  }
-  .btn-wa:hover {
-    background: #1fbb59;
-    box-shadow: 0 8px 22px rgba(37,211,102,.36);
-  }
-
-  .btn .arrow {
-    display: inline-block;
-    transition: transform .2s ease;
-  }
-  .btn:hover .arrow { transform: translateX(4px); }
-
-  /* SECTIONS */
-  section { padding: 32px 16px; }
-  section.alt { background: var(--light); }
-  h2 {
-    font-size: 24px; color: var(--dark); text-align: center;
-    margin-bottom: 8px; font-weight: 800;
-  }
-  h2 .hl { color: var(--primary); }
-  .section-sub { text-align: center; color: var(--gray); margin-bottom: 24px; }
-
-  /* PROBLEM */
-  .problem-list {
-    display: grid; gap: 12px; max-width: 560px; margin: 0 auto;
-  }
-  .problem-item {
-    background: #fff; padding: 14px; border-radius: 12px;
-    border-left: 4px solid var(--primary);
-    display: flex; align-items: center; gap: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,.06);
-  }
-  .problem-item .icon { font-size: 28px; }
+  .section-title p { color: var(--text-soft); margin-top: 8px; font-size: 14px; }
 
   /* FEATURES */
-  .features {
-    display: grid; grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+  .feature-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
   }
   .feature {
-    background: #fff; padding: 16px 12px; border-radius: 12px;
-    text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,.08);
-    border-top: 4px solid var(--primary);
+    padding: 18px 14px; border-radius: 16px;
+    background: #fff;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    text-align: center;
   }
-  .feature .ico {
-    font-size: 36px; margin-bottom: 8px; display: block;
+  .feature .icon {
+    width: 46px; height: 46px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center; font-size: 22px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    margin: 0 auto 12px;
+    box-shadow: 0 4px 12px rgba(79,70,229,.35);
   }
-  .feature h3 { font-size: 14px; color: var(--dark); margin-bottom: 4px; }
-  .feature p { font-size: 12px; color: var(--gray); }
+  .feature h4 { font-size: 14px; margin-bottom: 4px; font-weight: 800; }
+  .feature p { font-size: 12px; color: var(--text-soft); line-height: 1.45; }
 
-  /* BENEFITS */
-  .benefit-list { max-width: 560px; margin: 0 auto; display: grid; gap: 10px; }
-  .benefit {
-    background: #fff; padding: 14px; border-radius: 10px;
-    display: flex; gap: 12px; align-items: flex-start;
-    box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  /* SHOWCASE */
+  .showcase-img {
+    border-radius: 20px; overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border);
+    margin-bottom: 22px;
   }
-  .check {
-    background: var(--green); color: #fff;
-    min-width: 28px; height: 28px; border-radius: 50%;
+  .showcase-content ul { list-style: none; margin-top: 16px; }
+  .showcase-content li {
+    padding: 12px 0; padding-left: 36px; position: relative;
+    border-bottom: 1px dashed var(--border);
+    font-size: 14px;
+  }
+  .showcase-content li:last-child { border-bottom: none; }
+  .showcase-content li::before {
+    content: '⚡'; position: absolute; left: 0; top: 10px;
+    width: 26px; height: 26px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
     display: flex; align-items: center; justify-content: center;
-    font-weight: 800;
+    font-size: 13px; color: #fff;
   }
-  .benefit strong { color: var(--dark); display: block; }
-  .benefit span { font-size: 13px; color: var(--gray); }
+  .showcase-content li strong { color: var(--text); display: block; }
+  .showcase-content li span { color: var(--text-soft); font-size: 12px; }
 
-  /* COMPARISON */
-  .compare {
+  /* GALLERY */
+  .gallery {
     display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
-    max-width: 560px; margin: 0 auto;
   }
-  .compare-col {
-    padding: 16px 12px; border-radius: 12px;
+  .gal-item {
+    border-radius: 14px; overflow: hidden;
+    border: 1px solid var(--border);
+    background: #fff;
+    box-shadow: var(--shadow);
   }
-  .compare-col.bad { background: #fdecea; border: 2px solid #f5b5b1; }
-  .compare-col.good { background: #e8f7f4; border: 2px solid var(--green); }
-  .compare-col h4 {
-    font-size: 14px; margin-bottom: 10px; text-align: center;
-  }
-  .compare-col.bad h4 { color: var(--primary-dark); }
-  .compare-col.good h4 { color: var(--green-dark); }
-  .compare-col ul { list-style: none; font-size: 13px; }
-  .compare-col li { padding: 4px 0; }
+  .gal-item img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; }
+  .gal-item.wide { grid-column: span 2; }
+  .gal-item.wide img { aspect-ratio: 16/10; }
 
-  /* TESTIMONI */
-  .testi-grid { display: grid; gap: 12px; max-width: 560px; margin: 0 auto; }
-  .testi {
-    background: #fff; padding: 14px; border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  /* OFFER */
+  .offer-wrap {
+    margin: 0 18px;
+    padding: 24px 20px; border-radius: 22px;
+    background: #fff;
+    border: 2px solid var(--primary);
+    box-shadow: var(--shadow-lg);
   }
-  .testi-head { display: flex; gap: 10px; align-items: center; margin-bottom: 8px; }
-  .avatar {
-    width: 42px; height: 42px; border-radius: 50%;
-    background: linear-gradient(135deg, #ffb703, #e63946);
-    color: #fff; display: flex; align-items: center; justify-content: center;
-    font-weight: 800;
+  .offer-top { text-align: center; margin-bottom: 18px; }
+  .offer-top .ribbon {
+    display: inline-block; padding: 6px 16px;
+    background: linear-gradient(90deg, var(--pink), var(--primary));
+    color: #fff; font-weight: 800; border-radius: 999px;
+    font-size: 12px;
+    margin-bottom: 12px;
   }
-  .testi-name strong { display: block; font-size: 14px; color: var(--dark); }
-  .testi-name .verified { font-size: 11px; color: var(--green); }
-  .testi p { font-size: 13px; color: #444; }
-  .testi .stars { margin-top: 4px; font-size: 14px; }
-
-  /* GUARANTEE */
-  .guarantee {
-    background: linear-gradient(135deg, var(--green), var(--green-dark));
-    color: #fff; padding: 24px; border-radius: 16px;
-    text-align: center; max-width: 560px; margin: 0 auto;
+  .offer-top h2 { font-size: 22px; line-height: 1.3; }
+  .offer-list { list-style: none; margin-bottom: 20px; }
+  .offer-list li {
+    padding: 8px 0; padding-left: 28px; position: relative;
+    font-size: 14px;
   }
-  .guarantee .ico { font-size: 56px; }
-  .guarantee h3 { font-size: 22px; margin: 6px 0; }
-
-  /* BONUS */
-  .bonus-box {
-    background: #fff; border: 3px dashed var(--accent);
-    border-radius: 16px; padding: 18px; max-width: 560px; margin: 0 auto;
+  .offer-list li::before {
+    content: '✓'; position: absolute; left: 0; top: 9px;
+    width: 20px; height: 20px; border-radius: 50%;
+    background: var(--accent); color: #fff; font-weight: 900;
+    display: flex; align-items: center; justify-content: center; font-size: 12px;
   }
-  .bonus-box h3 {
-    text-align: center; color: var(--dark); margin-bottom: 12px;
+  .price-options {
+    display: grid; gap: 10px; margin: 18px 0;
   }
-  .bonus-list { display: grid; gap: 8px; }
-  .bonus-item {
-    display: flex; gap: 10px; align-items: center;
-    padding: 8px; background: #fff8e1; border-radius: 8px;
+  .price-opt {
+    padding: 14px 16px; border-radius: 14px;
+    background: var(--bg-tint);
+    border: 2px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
   }
-  .bonus-item .gift { font-size: 22px; }
-  .bonus-item .val {
-    margin-left: auto; color: var(--primary); font-weight: 700;
-    text-decoration: line-through; font-size: 13px;
+  .price-opt.featured {
+    border-color: var(--primary);
+    background: linear-gradient(135deg, #fff, var(--bg-tint));
+  }
+  .price-opt-label { font-weight: 700; font-size: 14px; }
+  .price-opt-label small { display: block; font-size: 11px; color: var(--text-soft); font-weight: 500; }
+  .price-opt-amount { font-size: 20px; font-weight: 900; color: var(--primary); }
+  .badge-best {
+    display: inline-block; background: var(--gold); color: #fff;
+    padding: 2px 8px; border-radius: 999px;
+    font-size: 9px; font-weight: 800; margin-left: 6px; vertical-align: middle;
+  }
+  .stock-bar { margin: 16px 0; }
+  .stock-bar p { font-size: 12px; color: var(--text-soft); margin-bottom: 6px; }
+  .stock-bar p strong { color: var(--pink); }
+  .bar { height: 8px; border-radius: 99px; background: var(--border); overflow: hidden; }
+  .bar > div {
+    height: 100%; width: 18%;
+    background: linear-gradient(90deg, var(--pink), var(--gold));
+    border-radius: 99px;
   }
 
   /* ORDER FORM */
   .order-form {
-    background: #fff; max-width: 560px; margin: 0 auto;
-    padding: 20px; border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.12);
+    margin: 18px 0 0;
+    padding: 22px;
+    background: linear-gradient(135deg, var(--bg-tint), #fff);
+    border: 2px solid var(--primary);
+    border-radius: 18px;
+    display: none;
+    animation: slideDown .4s ease;
   }
-  .order-form h2 { margin-bottom: 16px; }
-  .form-group { margin-bottom: 12px; }
+  .order-form.open { display: block; }
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .order-form h3 {
+    font-size: 18px; margin-bottom: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .order-form .sub { font-size: 12px; color: var(--text-soft); margin-bottom: 16px; }
+  .form-group { margin-bottom: 14px; }
   .form-group label {
-    display: block; font-size: 13px; font-weight: 600;
-    color: var(--dark); margin-bottom: 4px;
+    display: block; font-size: 12px; font-weight: 700;
+    margin-bottom: 6px; color: var(--text);
   }
-  .form-group input, .form-group select, .form-group textarea {
-    width: 100%; padding: 12px; border: 2px solid #e0e0e0;
-    border-radius: 8px; font-size: 14px;
+  .form-group label .req { color: var(--pink); }
+  .form-group input, .form-group textarea, .form-group select {
+    width: 100%; padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-family: inherit; font-size: 14px;
+    background: #fff;
+    color: var(--text);
     transition: border-color .2s;
   }
-  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
     outline: none; border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79,70,229,.15);
   }
-  .qty-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .total-row {
-    background: var(--light); padding: 14px; border-radius: 10px;
-    margin: 12px 0; display: flex; justify-content: space-between;
-    align-items: center;
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .payment-pick {
+    display: grid; gap: 8px; margin-top: 4px;
   }
-  .total-row .lbl { font-size: 14px; color: var(--gray); }
-  .total-row .val { font-size: 22px; font-weight: 800; color: var(--primary); }
+  .pay-opt {
+    padding: 12px 14px; border-radius: 12px;
+    border: 2px solid var(--border);
+    background: #fff;
+    cursor: pointer;
+    display: flex; justify-content: space-between; align-items: center;
+    transition: all .2s;
+  }
+  .pay-opt input { display: none; }
+  .pay-opt.selected {
+    border-color: var(--primary);
+    background: var(--bg-tint);
+  }
+  .pay-opt-label { font-weight: 700; font-size: 13px; }
+  .pay-opt-label small { display: block; font-size: 11px; color: var(--text-soft); font-weight: 500; }
+  .pay-opt-price { font-weight: 900; font-size: 16px; color: var(--primary); }
+  .total-box {
+    margin: 16px 0;
+    padding: 16px;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 12px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .total-box .label { font-size: 13px; opacity: .9; }
+  .total-box .amount { font-size: 22px; font-weight: 900; }
+  .form-note {
+    text-align: center; font-size: 11px; color: var(--text-soft); margin-top: 10px;
+  }
+
+  /* TESTIMONIALS */
+  .testi-grid { display: grid; gap: 12px; }
+  .testi {
+    padding: 18px; border-radius: 16px;
+    background: #fff;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+  }
+  .stars { color: var(--gold); font-size: 14px; margin-bottom: 8px; }
+  .testi p { color: var(--text-soft); font-size: 13px; margin-bottom: 12px; }
+  .testi .who { display: flex; align-items: center; gap: 10px; }
+  .avatar {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; color: #fff; font-size: 13px;
+  }
+  .who strong { display: block; font-size: 13px; }
+  .who span { font-size: 11px; color: var(--text-dim); }
 
   /* FAQ */
-  .faq-list { max-width: 560px; margin: 0 auto; }
   details {
-    background: #fff; margin-bottom: 8px; border-radius: 10px;
-    padding: 12px 14px; box-shadow: 0 2px 6px rgba(0,0,0,.05);
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px; padding: 14px 16px; margin-bottom: 10px;
+    box-shadow: var(--shadow);
   }
+  details[open] { border-color: var(--primary); }
   summary {
-    font-weight: 700; color: var(--dark); cursor: pointer;
-    font-size: 14px; list-style: none; position: relative;
-    padding-right: 24px;
+    cursor: pointer; font-weight: 700; font-size: 14px;
+    list-style: none; display: flex; justify-content: space-between; align-items: center;
   }
+  summary::-webkit-details-marker { display: none; }
   summary::after {
-    content: '+'; position: absolute; right: 0; top: -2px;
-    font-size: 20px; color: var(--primary);
+    content: '+'; color: var(--primary); font-size: 22px; font-weight: 900;
+    transition: transform .3s;
   }
-  details[open] summary::after { content: '−'; }
-  details p { margin-top: 8px; font-size: 13px; color: #555; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details p { margin-top: 10px; color: var(--text-soft); font-size: 13px; }
 
-  /* TRUST BADGES */
-  .trust-row {
-    display: flex; flex-wrap: wrap; gap: 8px;
-    justify-content: center; margin-top: 16px;
+  /* FINAL CTA */
+  .final-cta {
+    text-align: center; padding: 40px 18px;
+    background: linear-gradient(135deg, var(--bg-tint), #fff);
+    margin-top: 20px;
   }
-  .trust {
-    background: #fff; padding: 8px 14px; border-radius: 20px;
-    font-size: 12px; font-weight: 600; color: var(--dark);
-    box-shadow: 0 2px 6px rgba(0,0,0,.08);
-    display: flex; align-items: center; gap: 6px;
-  }
-
-  /* FLOATING WA */
-  .float-wa {
-    position: fixed; bottom: 18px; right: 18px; z-index: 90;
-    background: var(--whatsapp); color: #fff;
-    width: 58px; height: 58px; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 30px; text-decoration: none;
-    box-shadow: 0 6px 20px rgba(37,211,102,.5);
-    animation: bounce 2s infinite;
-  }
-  @keyframes bounce {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
-  }
-
-  /* STICKY CTA */
-  .sticky-cta {
-    position: fixed; bottom: 0; left: 0; right: 0;
-    background: #fff; padding: 10px 12px;
-    box-shadow: 0 -4px 14px rgba(0,0,0,.12);
-    display: none; align-items: center; gap: 10px;
-    z-index: 80;
-  }
-  .sticky-cta .info { flex: 1; font-size: 12px; }
-  .sticky-cta .info .price { color: var(--primary); font-weight: 800; font-size: 16px; }
-  .sticky-cta .btn { padding: 12px 18px; font-size: 14px; }
-  @media (max-width: 600px) {
-    .sticky-cta { display: flex; }
-    body { padding-bottom: 70px; }
-    .float-wa { bottom: 78px; }
-  }
+  .final-cta h2 { font-size: 22px; margin-bottom: 10px; line-height: 1.3; }
+  .final-cta p { color: var(--text-soft); margin-bottom: 20px; font-size: 14px; }
 
   /* FOOTER */
   footer {
-    background: var(--dark); color: #fff;
-    padding: 24px 16px; text-align: center; font-size: 13px;
-  }
-  footer p { margin: 4px 0; opacity: .9; }
-
-  /* RESPONSIVE */
-  @media (min-width: 600px) {
-    h1 { font-size: 34px; }
-    .features { grid-template-columns: repeat(3, 1fr); }
+    padding: 24px 18px; text-align: center;
+    border-top: 1px solid var(--border);
+    color: var(--text-dim); font-size: 11px;
+    background: #fff;
   }
 
-  .notif-pop {
-    position: fixed; bottom: 90px; left: 12px;
-    background: #fff; padding: 10px 14px;
-    border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,.18);
-    font-size: 12px; max-width: 260px; z-index: 70;
-    border-left: 4px solid var(--green);
-    transform: translateX(-120%); transition: transform .4s;
+  /* Success message */
+  .success-msg {
+    display: none;
+    margin-top: 14px; padding: 14px;
+    background: #d1fae5; border: 1px solid #10b981;
+    border-radius: 10px; color: #065f46;
+    font-size: 13px; text-align: center; font-weight: 600;
   }
-  .notif-pop.show { transform: translateX(0); }
-  .notif-pop strong { color: var(--dark); display: block; font-size: 13px; }
-  .notif-pop span { color: var(--gray); }
+  .success-msg.show { display: block; }
 </style>
 </head>
 <body>
 
-<div class="top-bar">
-  <span class="blink">🔥</span> FLASH SALE BERAKHIR HARI INI — DISKON 50% + GRATIS ONGKIR! <span class="blink">🔥</span>
-</div>
+<div class="urgency">⚡ FLASH SALE BERAKHIR HARI INI · DISKON 65% + GRATIS ONGKIR</div>
+
+<nav>
+  <div class="logo">G-LAMP PRO X</div>
+  <a href="#order" class="nav-cta">PESAN</a>
+</nav>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="container">
-    <div class="badge-row">
-      <span class="badge red">⚡ BEST SELLER 2026</span>
-      <span class="badge">⭐ 10.000+ Review</span>
-      <span class="badge green">✓ COD Seluruh Indonesia</span>
+<header class="hero">
+  <div class="hero-badge">⚡ TEKNOLOGI 2026 · LIMITED EDITION</div>
+  <h1>Speaker Bluetooth Lampu RGB <span class="grad">Generasi Masa Depan</span></h1>
+  <p class="lead">5-in-1 — Speaker HiFi 10W, Wireless Charging, Lampu RGB 7 Warna, FM Radio & Jam Digital.</p>
+
+  <div class="hero-img-wrap">
+    <span class="floating-tag t1">🔊 BASS BOOST</span>
+    <span class="floating-tag t2">⚡ WIRELESS</span>
+    <span class="floating-tag t3">🌈 RGB 7 WARNA</span>
+    <img src="WhatsApp Image 2026-06-05 at 20.58.29.jpeg" alt="G-Lamp Pro X" />
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat"><strong>15K+</strong><span>Terjual</span></div>
+    <div class="stat"><strong>4.9★</strong><span>Rating</span></div>
+    <div class="stat"><strong>1 Thn</strong><span>Garansi</span></div>
+  </div>
+
+  <div class="price-block">
+    <span class="price-old">Rp 799.000</span>
+    <span class="price-new">Rp 220.000</span>
+    <span class="disc-pill">-72%</span>
+  </div>
+
+  <a href="#order" class="btn-primary">🚀 KLAIM HARGA SPESIAL</a>
+
+  <div class="trust">
+    <span>Bayar di Tempat</span>
+    <span>Gratis Ongkir</span>
+    <span>Garansi Resmi</span>
+  </div>
+</header>
+
+<!-- COUNTDOWN -->
+<div class="countdown">
+  <h3>⏰ <span>Promo Berakhir Dalam:</span></h3>
+  <div class="timer">
+    <div class="time-box"><strong id="h">00</strong><span>Jam</span></div>
+    <div class="time-box"><strong id="m">00</strong><span>Menit</span></div>
+    <div class="time-box"><strong id="s">00</strong><span>Detik</span></div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="section-title">
+    <small>FITUR UNGGULAN</small>
+    <h2>Satu Perangkat, <span class="grad">5 Fungsi Canggih</span></h2>
+    <p>Teknologi terkini untuk pengalaman audio-visual paling imersif.</p>
+  </div>
+  <div class="feature-grid">
+    <div class="feature">
+      <div class="icon">🎵</div>
+      <h4>Speaker HiFi 10W</h4>
+      <p>Suara jernih, bass dalam.</p>
     </div>
-
-    <h1>Capek <span class="hl">Iris Sayur Berjam-jam?</span><br>Hemat 80% Waktu Masak dengan META Ns!</h1>
-    <p class="subtitle">Alat Pencacah & Serut Sayur Buah Multifungsi — 8 Mata Pisau Premium, Cuci 10 Detik!</p>
-
-    <div class="product-img">
-      <img src="https://cdn.orderonline.id/uploads/images_4474131772144639441.JPG" alt="META Ns Alat Pencacah Serut Sayur Buah" style="width:100%;display:block" />
-      <div class="discount-tag">
-        <span class="num">-50%</span>
-        <span class="lbl">HARI INI</span>
-      </div>
+    <div class="feature">
+      <div class="icon">📡</div>
+      <h4>Bluetooth 5.3</h4>
+      <p>Koneksi stabil hingga 10m.</p>
     </div>
-
-
-    <div class="rating-row">
-      <div class="rating-item">
-        <div class="stars">★★★★★</div>
-        <div class="val">4.9 / 5.0</div>
-        <div class="lbl">10.364 Ulasan</div>
-      </div>
-      <div class="rating-item">
-        <div class="val" style="color:var(--green)">21.356+</div>
-        <div class="lbl">Sudah Terjual</div>
-      </div>
-      <div class="rating-item">
-        <div class="val" style="color:var(--primary)">14 unit</div>
-        <div class="lbl">Sisa Stok!</div>
-      </div>
+    <div class="feature">
+      <div class="icon">⚡</div>
+      <h4>Wireless Charging</h4>
+      <p>Charge HP cukup taruh di atas.</p>
     </div>
-
-    <div class="price-box">
-      <div class="price-old">Harga Normal Rp 349.000</div>
-      <div class="price-new">Rp 175.000</div>
-      <div class="save-tag">💰 HEMAT Rp 174.000</div>
+    <div class="feature">
+      <div class="icon">🌈</div>
+      <h4>RGB 7 Warna</h4>
+      <p>Mood lighting auto ikut musik.</p>
     </div>
-
-    <div class="countdown">
-      <div class="label">⏰ PROMO BERAKHIR DALAM:</div>
-      <div class="timer">
-        <div class="box"><span class="num" id="h">02</span><span class="unit">JAM</span></div>
-        <div class="box"><span class="num" id="m">45</span><span class="unit">MENIT</span></div>
-        <div class="box"><span class="num" id="s">30</span><span class="unit">DETIK</span></div>
-      </div>
+    <div class="feature">
+      <div class="icon">📻</div>
+      <h4>FM Radio + Jam</h4>
+      <p>Display LED jernih.</p>
     </div>
-
-    <div class="stock-warn">
-      ⚠️ <strong>Perhatian!</strong> Stok kami tinggal <strong>14 unit</strong> dari 100 unit hari ini.
-      <div class="stock-bar"><div class="fill"></div></div>
-    </div>
-
-    <div class="cta-wrap">
-      <a href="#order" onclick="openOrderForm(event)" class="btn btn-order">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"></path></svg>
-        Pesan Sekarang &amp; Bayar di Tempat
-        <span class="arrow">→</span>
-      </a>
+    <div class="feature">
+      <div class="icon">🔋</div>
+      <h4>Baterai Tahan Lama</h4>
+      <p>Standby super lama.</p>
     </div>
   </div>
 </section>
 
-<!-- PROBLEM -->
-<section class="alt">
-  <div class="container">
-    <h2>Pernah Ngalamin <span class="hl">Masalah Ini?</span></h2>
-    <p class="section-sub">Jangan biarkan dapur jadi sumber stres kamu...</p>
-    <div class="problem-list">
-      <div class="problem-item"><span class="icon">😩</span><div>Iris bawang sampai <strong>mata pedih & berair</strong> tiap hari</div></div>
-      <div class="problem-item"><span class="icon">⏰</span><div>Habis <strong>1 jam cuma buat motong sayur</strong> sebelum masak</div></div>
-      <div class="problem-item"><span class="icon">🤕</span><div>Jari pernah <strong>teriris pisau</strong> saat buru-buru</div></div>
-      <div class="problem-item"><span class="icon">🍽️</span><div>Potongan sayur <strong>nggak rapi</strong>, masakan jadi kurang menarik</div></div>
-      <div class="problem-item"><span class="icon">💸</span><div>Beli food processor mahal, <strong>ribet dicuci</strong> & makan tempat</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- SOLUTION / FEATURES -->
+<!-- SHOWCASE -->
 <section>
-  <div class="container">
-    <h2>Solusinya: <span class="hl">META Ns Multifungsi</span></h2>
-    <p class="section-sub">8 fungsi dalam 1 alat. Hemat tempat, hemat tenaga, hemat waktu!</p>
-
-    <img src="https://cdn.orderonline.id/uploads/2974671598489614418-large.gif" alt="Demo cara kerja META Ns" class="demo-gif" />
-    <p class="gallery-caption">👆 Lihat sendiri cepatnya META Ns mencacah sayur dalam hitungan detik!</p>
-
-    <div class="features">
-      <div class="feature"><span class="ico">🔪</span><h3>8 Mata Pisau</h3><p>Iris, serut, parut, dadu — semua bisa!</p></div>
-      <div class="feature"><span class="ico">⚡</span><h3>Cepat 5 Detik</h3><p>Sayur langsung halus tanpa effort</p></div>
-      <div class="feature"><span class="ico">🛡️</span><h3>Anti Slip</h3><p>Karet dasar kokoh, aman digunakan</p></div>
-      <div class="feature"><span class="ico">💎</span><h3>Stainless Steel</h3><p>Tajam tahan lama, tidak berkarat</p></div>
-      <div class="feature"><span class="ico">🧼</span><h3>Mudah Dicuci</h3><p>Bongkar pasang cuma 10 detik</p></div>
-      <div class="feature"><span class="ico">👐</span><h3>Aman Tangan</h3><p>Pelindung jari anti teriris</p></div>
-    </div>
+  <div class="section-title">
+    <small>DESAIN PREMIUM</small>
+    <h2>Estetika <span class="grad">Modern</span> di Tiap Sudut</h2>
+  </div>
+  <div class="showcase-img">
+    <img src="WhatsApp Image 2026-06-05 at 20.57.41.jpeg" alt="G-Lamp Pro X Multi Color" />
+  </div>
+  <div class="showcase-content">
+    <p style="color: var(--text-soft); font-size: 14px;">Bentuk huruf "G" yang ikonik, finishing premium, dengan permainan cahaya RGB lembut. Jadi <strong>focal point</strong> meja kerja atau kamar Anda.</p>
+    <ul>
+      <li><strong>Material Premium ABS</strong><span>Anti gores, tahan benturan</span></li>
+      <li><strong>Display Jam Digital LED</strong><span>Jelas, bahkan dalam gelap</span></li>
+      <li><strong>Kontrol Touch Modern</strong><span>Tombol responsif</span></li>
+      <li><strong>Cocok Sebagai Hadiah</strong><span>Kemasan eksklusif siap diberikan</span></li>
+    </ul>
   </div>
 </section>
 
-<!-- BENEFITS -->
-<section class="alt">
-  <div class="container">
-    <h2>Kenapa <span class="hl">Wajib Punya?</span></h2>
-    <p class="section-sub">Manfaat nyata yang langsung kamu rasakan:</p>
-
-    <div class="benefit-list">
-      <div class="benefit"><div class="check">✓</div><div><strong>Hemat 80% Waktu Masak</strong><span>Dari 60 menit jadi 10 menit aja!</span></div></div>
-      <div class="benefit"><div class="check">✓</div><div><strong>Hasil Potongan Rapi & Cantik</strong><span>Bikin masakan terlihat profesional seperti chef</span></div></div>
-      <div class="benefit"><div class="check">✓</div><div><strong>Bebas Iritasi Mata</strong><span>Potong bawang tanpa nangis lagi</span></div></div>
-      <div class="benefit"><div class="check">✓</div><div><strong>Aman untuk Anak & Pemula</strong><span>Cocok diajarkan untuk anak yang mau bantu di dapur</span></div></div>
-      <div class="benefit"><div class="check">✓</div><div><strong>Cocok Semua Sayur & Buah</strong><span>Wortel, kentang, timun, apel, keju — semuanya bisa!</span></div></div>
-      <div class="benefit"><div class="check">✓</div><div><strong>Hemat Biaya Makan Luar</strong><span>Masak di rumah jadi gampang & menyenangkan</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- COMPARISON -->
+<!-- GALLERY -->
 <section>
-  <div class="container">
-    <h2>Sebelum vs <span class="hl">Sesudah Punya META Ns</span></h2>
-    <p class="section-sub">Lihat bedanya sendiri 👇</p>
-    <div class="compare">
-      <div class="compare-col bad">
-        <h4>❌ TANPA META Ns</h4>
-        <ul>
-          <li>⏱️ 60 menit potong sayur</li>
-          <li>😭 Mata pedih iris bawang</li>
-          <li>🩹 Sering teriris pisau</li>
-          <li>🍽️ Potongan tidak rapi</li>
-          <li>😤 Capek & stres masak</li>
-          <li>💸 Boros beli makan luar</li>
-        </ul>
-      </div>
-      <div class="compare-col good">
-        <h4>✅ PAKAI META Ns</h4>
-        <ul>
-          <li>⚡ 10 menit selesai</li>
-          <li>😊 Tangan tetap aman</li>
-          <li>🛡️ Anti teriris</li>
-          <li>✨ Hasil rapi cantik</li>
-          <li>🎉 Masak jadi seru</li>
-          <li>💰 Hemat pengeluaran</li>
-        </ul>
-      </div>
-    </div>
+  <div class="section-title">
+    <small>GALLERY PRODUK</small>
+    <h2>Lihat <span class="grad">Lebih Dekat</span></h2>
+    <p>Setiap detail dirancang dengan presisi.</p>
+  </div>
+  <div class="gallery">
+    <div class="gal-item wide"><img src="WhatsApp Image 2026-06-05 at 20.58.29.jpeg" alt="Tampilan utama"></div>
+    <div class="gal-item"><img src="WhatsApp Image 2026-06-05 at 20.57.41.jpeg" alt="RGB colors"></div>
+    <div class="gal-item"><img src="Screenshot 2026-06-05 210408.png" alt="Detail fitur"></div>
   </div>
 </section>
 
-<!-- BONUS -->
-<section class="alt">
-  <div class="container">
-    <h2>🎁 BONUS <span class="hl">Khusus Hari Ini!</span></h2>
-    <p class="section-sub">Pesan sekarang dapat bonus senilai Rp 250.000 GRATIS!</p>
-    <div class="bonus-box">
-      <h3>✨ Yang Kamu Dapatkan:</h3>
-      <div class="bonus-list">
-        <div class="bonus-item"><span class="gift">🎁</span><div>1x META Ns Alat Pencacah & Serut</div><span class="val">Rp 349.000</span></div>
-        <div class="bonus-item"><span class="gift">🎁</span><div>Bonus 8 Mata Pisau Lengkap</div><span class="val">Rp 99.000</span></div>
-        <div class="bonus-item"><span class="gift">🎁</span><div>Bonus Pelindung Tangan</div><span class="val">Rp 49.000</span></div>
-        <div class="bonus-item"><span class="gift">🎁</span><div>Bonus E-book 50 Resep Sehat</div><span class="val">Rp 75.000</span></div>
-        <div class="bonus-item"><span class="gift">🚚</span><div>GRATIS ONGKIR Seluruh Indonesia</div><span class="val">Rp 30.000</span></div>
-      </div>
-      <p style="text-align:center;margin-top:14px;font-size:13px;color:var(--gray)">
-        Total Nilai: <s>Rp 602.000</s> — <strong style="color:var(--primary);font-size:18px">Cukup Bayar Rp 175.000!</strong>
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONI -->
-<section>
-  <div class="container">
-    <h2>Apa Kata <span class="hl">Pembeli Kami?</span></h2>
-    <p class="section-sub">Ribuan ibu sudah merasakan manfaatnya 💕</p>
-    <div class="testi-grid">
-      <div class="testi">
-        <div class="testi-head">
-          <div class="avatar">SR</div>
-          <div class="testi-name"><strong>Siti Rahayu, Jakarta</strong><span class="verified">✓ Pembeli Terverifikasi</span></div>
-        </div>
-        <div class="stars">★★★★★</div>
-        <p>"Awalnya ragu, ternyata MANTAP banget! Potong wortel sekarang cuma 1 menit. Suami sampai kaget masakan saya makin cantik. Worth it pakai banget!"</p>
-      </div>
-      <div class="testi">
-        <div class="testi-head">
-          <div class="avatar">DA</div>
-          <div class="testi-name"><strong>Dewi Anggraini, Bandung</strong><span class="verified">✓ Pembeli Terverifikasi</span></div>
-        </div>
-        <div class="stars">★★★★★</div>
-        <p>"Beli buat hadiah mama, eh malah ketagihan dipake sendiri. Pisaunya tajem banget, anti slipnya juara. Recommended buat ibu-ibu sibuk!"</p>
-      </div>
-      <div class="testi">
-        <div class="testi-head">
-          <div class="avatar">RP</div>
-          <div class="testi-name"><strong>Rina Pratiwi, Surabaya</strong><span class="verified">✓ Pembeli Terverifikasi</span></div>
-        </div>
-        <div class="stars">★★★★★</div>
-        <p>"COD nya lancar, barang ori. Anak saya juga jadi suka bantu masak. Pengiriman cepat 2 hari sampai. Pokoknya 10/10!"</p>
-      </div>
-      <div class="testi">
-        <div class="testi-head">
-          <div class="avatar">YM</div>
-          <div class="testi-name"><strong>Yuni Marlina, Medan</strong><span class="verified">✓ Pembeli Terverifikasi</span></div>
-        </div>
-        <div class="stars">★★★★★</div>
-        <p>"Sudah 3 bulan pakai, masih tajam dan kokoh. Harga segini dapet kualitas segini? Murah banget! Mau beli lagi buat kado adik."</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- GUARANTEE -->
-<section class="alt">
-  <div class="container">
-    <div class="guarantee">
-      <div class="ico">🛡️</div>
-      <h3>GARANSI 100% UANG KEMBALI</h3>
-      <p>Jika produk tidak sesuai deskripsi atau rusak saat tiba, kami ganti baru atau refund 100%. Belanja tanpa khawatir!</p>
-      <div class="trust-row">
-        <div class="trust">🚚 COD</div>
-        <div class="trust">📦 Cek Dulu</div>
-        <div class="trust">↩️ Refund</div>
-        <div class="trust">✅ Ori</div>
-      </div>
-    </div>
-
-    <div class="seal-row">
-      <img src="https://cdn.orderonline.id/img/seal_secure_id.png" alt="Transaksi Aman" />
-      <img src="https://cdn.orderonline.id/img/seal_money_back_id.png" alt="Garansi Uang Kembali" />
-    </div>
-
-    <div class="payment-row">
-      <span>Metode pembayaran:</span>
-      <img src="https://cdn.orderonline.id/icons/payment-cod.png" alt="COD" />
-      <img src="https://cdn.orderonline.id/icons/payment-bank_transfer.png" alt="Transfer Bank" />
-    </div>
-  </div>
-</section>
-
-<!-- ORDER FORM -->
+<!-- OFFER -->
 <section id="order">
-  <div class="container">
-    <div class="order-form">
-      <h2>📝 Form <span class="hl">Pemesanan</span></h2>
-      <p class="section-sub" style="margin-bottom:16px">Isi data di bawah, barang dikirim hari ini juga!</p>
+  <div class="offer-wrap">
+    <div class="offer-top">
+      <span class="ribbon">🔥 PAKET HEMAT HARI INI</span>
+      <h2>Bawa Pulang <span style="background:linear-gradient(90deg,var(--primary),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent;">G-Lamp Pro X</span></h2>
+    </div>
 
-      <!-- OrderOnline Embed Code - v8.0.2 -->
-      <div class="ooef">
-        <form class="orderonline-embed-form"
-              data-username="chekoutsekarang"
-              data-product-slug="Alat-parut"
-              data-product-id="6a21a14ef041da941502be56"
-              id="oo-embed-form-Alat-parut-3264"
-              data-origin="orderonline">
-          <div class="ooef-loader">
-            <style>.ooef-loader{visibility:hidden;opacity:0;position:absolute;left:0;right:0;top:0;bottom:0;display:flex;justify-content:center;align-items:center;flex-direction:column;animation:ooLoadingIn 10s ease;-webkit-animation:ooLoadingIn 10s ease;animation-fill-mode:forwards;overflow:hidden}@keyframes ooLoadingIn{0%{visibility:hidden;opacity:0}20%{visibility:visible;opacity:0}100%{visibility:visible;opacity:1}}@-webkit-keyframes ooLoadingIn{0%{visibility:hidden;opacity:0}20%{visibility:visible;opacity:0}100%{visibility:visible;opacity:1}}.ooef-loader>div,.ooef-loader>div:after{border-radius:50%;width:2.5rem;height:2.5rem}.ooef-loader>div{font-size:10px;position:relative;text-indent:-9999em;border:.25rem solid #f5f5f5;border-left:.25rem solid #55c4cf;-webkit-transform:translateZ(0);-ms-transform:translateZ(0);transform:translateZ(0);-webkit-animation:ooLoading 1.1s infinite linear;animation:ooLoading 1.1s infinite linear}.ooef-loader.error>div{border-left:.25rem solid #ff4500;animation-duration:5s}@-webkit-keyframes ooLoading{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes ooLoading{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}</style>
-            <div aria-live="polite" role="status"><div>Loading...</div></div>
-          </div>
-        </form>
+    <ul class="offer-list">
+      <li>1x G-Lamp Pro X (Black/White)</li>
+      <li>Kabel Type-C Premium 1.5m</li>
+      <li>Buku Panduan Berbahasa Indonesia</li>
+      <li>Garansi Resmi 1 Tahun Full</li>
+    </ul>
+
+    <div class="price-options">
+      <div class="price-opt featured">
+        <div class="price-opt-label">Transfer Bank<span class="badge-best">HEMAT</span><small>BCA / Mandiri / BRI / BNI</small></div>
+        <div class="price-opt-amount">Rp 220.000</div>
       </div>
-      <script>
-        if (typeof xLogError != 'function') {
-          var xLogError = function (error) {
-            var req = new XMLHttpRequest();
-            var payload = JSON.stringify({ url: document.location.href, line: error.line, stack: error.stack });
-            var params = 'message=' + encodeURIComponent(error.name) + '&payload=' + encodeURIComponent(payload) + '&type=embed&level=error';
-            req.open('POST', 'https://api.orderonline.id/log', true);
-            req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-            req.send(params);
-          };
-        }
-        try {
-          if (typeof xEmbedScript != 'function') {
-            var xEmbedScript = function () {
-              !function(w, d, e, v, id, t, s) {
-                if (d.getElementById(id)) return;
-                t = d.createElement(e); t.async = !0; t.src = v; t.id = id;
-                s = d.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
-              }(window, document, 'script', 'https://cdn.orderonline.id/js/embed-v2-slim.min.js?v=8.0.2', 'oo-embed-js');
-            };
-          }
-          if (typeof xEmbedInit != 'function') {
-            var xEmbedInit = function (w, n) {
-              if (w.ooe) return;
-              n = w.ooe = function() { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) };
-              if (!w._ooe) w._ooe = n;
-              n.push = n; n.loaded = !0; n.version = '8.0.2'; n.queue = [];
-            };
-          }
-          xEmbedInit(window);
-          ooe('setup', 'redirect', 'https://chekoutsekarang.orderonline.id');
-          ooe('init', '6a191c42f9c9ed111706aecc', '6a21a14ef041da941502be56', '6a21a3effc7aca12720c138f', 'oo-embed-form-Alat-parut-3264', {"mode":"page","action":"Klik untuk pemesanan","title":"Form Pemesanan","triggerPixel":false,"triggerGtm":false});
-          if (!window.jQuery) {
-            !function(w, d, e, v, id, t, s) {
-              if (d.getElementById(id)) return;
-              t = d.createElement(e); t.async = !0; t.src = v; t.id = id;
-              t.addEventListener('load', xEmbedScript);
-              s = d.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
-            }(window, document, 'script', 'https://cdn.orderonline.id/js/vendor/jquery.min.js', 'oo-embed-jquery');
-          } else {
-            xEmbedScript();
-          }
-        } catch (e) { xLogError(e); throw e; }
-      </script>
-      <!-- End OrderOnline Embed Code -->
+      <div class="price-opt">
+        <div class="price-opt-label">Bayar di Tempat (COD)<small>Bayar saat barang tiba</small></div>
+        <div class="price-opt-amount">Rp 235.000</div>
+      </div>
+    </div>
 
-      <p style="text-align:center;font-size:12px;color:var(--gray);margin-top:10px">
-        🔒 Data Anda aman & terlindungi
-      </p>
+    <div class="stock-bar">
+      <p>⚠️ Stok tersisa: <strong>17 unit</strong> dari 100</p>
+      <div class="bar"><div></div></div>
+    </div>
+
+    <button type="button" class="btn-primary" onclick="toggleForm()">🛒 PESAN SEKARANG</button>
+
+    <!-- ORDER FORM -->
+    <div class="order-form" id="orderForm">
+      <h3>📝 Detail Pesanan</h3>
+      <p class="sub">Isi data lengkap untuk proses pengiriman.</p>
+
+      <form id="formPesanan" onsubmit="submitOrder(event)">
+        <div class="form-group">
+          <label>Nama Lengkap <span class="req">*</span></label>
+          <input type="text" name="nama" required placeholder="Contoh: Budi Santoso">
+        </div>
+
+        <div class="form-group">
+          <label>No. WhatsApp <span class="req">*</span></label>
+          <input type="tel" name="wa" required placeholder="08xxxxxxxxxx" pattern="[0-9]{10,15}">
+        </div>
+
+        <div class="form-group">
+          <label>Nama Jalan <span class="req">*</span></label>
+          <input type="text" name="jalan" required placeholder="Contoh: Jl. Merdeka Raya">
+        </div>
+
+        <div class="row2">
+          <div class="form-group">
+            <label>RT/RW <span class="req">*</span></label>
+            <input type="text" name="rtrw" required placeholder="003/005">
+          </div>
+          <div class="form-group">
+            <label>No. Rumah <span class="req">*</span></label>
+            <input type="text" name="nomor" required placeholder="12A">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Kelurahan / Desa <span class="req">*</span></label>
+          <input type="text" name="kelurahan" required placeholder="Contoh: Sukamaju">
+        </div>
+
+        <div class="form-group">
+          <label>Metode Pembayaran <span class="req">*</span></label>
+          <div class="payment-pick">
+            <label class="pay-opt selected" data-price="220000">
+              <input type="radio" name="payment" value="Transfer Bank" checked onchange="pickPayment(this)">
+              <div class="pay-opt-label">Transfer Bank<small>BCA / Mandiri / BRI / BNI</small></div>
+              <div class="pay-opt-price">Rp 220.000</div>
+            </label>
+            <label class="pay-opt" data-price="235000">
+              <input type="radio" name="payment" value="COD" onchange="pickPayment(this)">
+              <div class="pay-opt-label">Bayar di Tempat (COD)<small>Bayar saat barang tiba</small></div>
+              <div class="pay-opt-price">Rp 235.000</div>
+            </label>
+          </div>
+        </div>
+
+        <div class="total-box">
+          <div class="label">Total Pembayaran:</div>
+          <div class="amount" id="totalAmount">Rp 220.000</div>
+        </div>
+
+        <button type="submit" class="btn-primary">✅ KIRIM PESANAN VIA WHATSAPP</button>
+        <p class="form-note">Pesanan akan diteruskan ke admin via WhatsApp.</p>
+
+        <div class="success-msg" id="successMsg">
+          ✅ Pesanan berhasil dikirim! Admin akan menghubungi Anda.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+  <div class="section-title">
+    <small>TESTIMONI ASLI</small>
+    <h2>Dipercaya <span class="grad">Ribuan Pelanggan</span></h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi">
+      <div class="stars">★★★★★</div>
+      <p>"Kualitas suara jernih banget! Lampunya bikin kamar jadi vibe. Recommended!"</p>
+      <div class="who"><div class="avatar">AR</div><div><strong>Anisa R.</strong><span>Jakarta · Verified</span></div></div>
+    </div>
+    <div class="testi">
+      <div class="stars">★★★★★</div>
+      <p>"Pengiriman cepat, packing rapi. Charge HP sambil dengerin musik. Mantap!"</p>
+      <div class="who"><div class="avatar">BS</div><div><strong>Bayu S.</strong><span>Surabaya · Verified</span></div></div>
+    </div>
+    <div class="testi">
+      <div class="stars">★★★★★</div>
+      <p>"Buat hadiah anniversary. Pacar suka banget desainnya. Worth it!"</p>
+      <div class="who"><div class="avatar">DP</div><div><strong>Dimas P.</strong><span>Bandung · Verified</span></div></div>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="alt">
-  <div class="container">
-    <h2>❓ Pertanyaan <span class="hl">Sering Ditanya</span></h2>
-    <p class="section-sub">Masih ragu? Cek jawaban di bawah:</p>
-    <div class="faq-list">
-      <details><summary>Apakah bisa COD / Bayar di Tempat?</summary><p>Bisa! Kami melayani COD ke seluruh Indonesia. Cek dulu barangnya baru bayar ke kurir.</p></details>
-      <details><summary>Berapa lama pengiriman sampai?</summary><p>Pulau Jawa 1-3 hari, luar Jawa 3-7 hari kerja. Kami pakai ekspedisi terpercaya (JNE/J&T/SiCepat).</p></details>
-      <details><summary>Apakah pisaunya beneran tajam dan awet?</summary><p>Ya! Pisau terbuat dari stainless steel kualitas premium yang tahan karat dan tetap tajam meski dipakai bertahun-tahun.</p></details>
-      <details><summary>Apa garansinya kalau rusak?</summary><p>Kami berikan garansi tukar baru jika ada cacat produksi atau rusak saat pengiriman. Refund 100% jika tidak sesuai deskripsi.</p></details>
-      <details><summary>Apakah aman untuk pemula?</summary><p>Sangat aman! Dilengkapi pelindung tangan dan karet anti-slip. Bahkan anak-anak bisa membantu dengan pengawasan.</p></details>
-      <details><summary>Bagaimana cara membersihkannya?</summary><p>Cukup bongkar bagian-bagiannya, cuci dengan air sabun, lap kering. Total cuma 10 detik!</p></details>
-    </div>
+<section>
+  <div class="section-title">
+    <small>PERTANYAAN UMUM</small>
+    <h2>FAQ <span class="grad">Pembeli</span></h2>
   </div>
+  <details open><summary>Apakah bisa bayar di tempat (COD)?</summary><p>Bisa! Kami melayani COD seluruh Indonesia. Bayar setelah barang diterima.</p></details>
+  <details><summary>Berapa lama pengiriman?</summary><p>Pulau Jawa 1-3 hari, luar Jawa 2-5 hari. Resi dikirim otomatis.</p></details>
+  <details><summary>Garansi berapa lama?</summary><p>Garansi resmi 1 tahun full. Kerusakan pabrik ganti unit baru.</p></details>
+  <details><summary>Kompatibel dengan iPhone?</summary><p>Ya, support semua HP dengan Bluetooth & wireless charging Qi.</p></details>
 </section>
 
 <!-- FINAL CTA -->
-<section style="background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;text-align:center">
-  <div class="container">
-    <h2 style="color:#fff">⏰ Jangan Sampai <span style="color:var(--accent)">Kehabisan!</span></h2>
-    <p style="margin-bottom:18px;opacity:.95">Promo 50% ini hanya berlaku hari ini. Besok harga kembali normal Rp 349.000.</p>
-    <a href="#order" onclick="openOrderForm(event)" class="btn" style="background:#fff;color:var(--primary);max-width:400px;margin:0 auto;display:inline-flex;box-shadow:0 6px 18px rgba(0,0,0,.2)">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"></path></svg>
-      Amankan Stok Saya
-      <span class="arrow">→</span>
-    </a>
-  </div>
+<section class="final-cta">
+  <h2>Jangan Lewatkan, <span style="background:linear-gradient(90deg,var(--primary),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent;">Stok Terbatas!</span></h2>
+  <p>Harga kembali normal Rp 799.000 setelah promo berakhir.</p>
+  <a href="#order" class="btn-primary">⚡ AMANKAN STOK SEKARANG</a>
 </section>
 
 <footer>
-  <p><strong>META Ns Official Store</strong></p>
-  <p>© 2026 — Alat Dapur Berkualitas Terpercaya</p>
-  <p style="margin-top:8px;opacity:.7;font-size:11px">Pemesanan: <a href="https://chekoutsekarang.orderonline.id" style="color:#fff;text-decoration:underline">chekoutsekarang.orderonline.id</a></p>
+  © 2026 G-Lamp Pro X · Powered by Future Tech Indonesia
 </footer>
 
-<!-- Floating Order Button -->
-<a href="#order" onclick="openOrderForm(event)" class="float-wa" title="Pesan Sekarang" style="background:#e63946;box-shadow:0 6px 20px rgba(230,57,70,.5)">🛒</a>
-
-<!-- Sticky Mobile CTA -->
-<div class="sticky-cta">
-  <div class="info">
-    <div>META Ns - Diskon 50%</div>
-    <div class="price">Rp 175.000</div>
-  </div>
-  <a href="#order" onclick="openOrderForm(event)" class="btn btn-order">PESAN</a>
-</div>
-
-<!-- Notif Pop -->
-<div class="notif-pop" id="notif">
-  <strong id="notif-name">Andi dari Bekasi</strong>
-  <span id="notif-msg">baru saja memesan 1 pcs · 2 menit lalu</span>
-</div>
-
 <script>
-  // Open OrderOnline embed form
-  function openOrderForm(e) {
-    if (e) e.preventDefault();
-    var section = document.getElementById('order');
-    if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    setTimeout(function () {
-      var embed = document.getElementById('oo-embed-form-Alat-parut-3264');
-      if (!embed) return;
-      // Find the OrderOnline trigger button rendered inside the embed
-      var trigger = embed.querySelector('.ooef-button, button, a, [role="button"]');
-      if (trigger) {
-        trigger.click();
-      } else {
-        embed.click();
-      }
-    }, 700);
-  }
-
   // Countdown
-  let total = 2*3600 + 45*60 + 30;
-  const h = document.getElementById('h'), m = document.getElementById('m'), s = document.getElementById('s');
-  setInterval(() => {
-    if (total <= 0) total = 3*3600;
-    total--;
-    h.textContent = String(Math.floor(total/3600)).padStart(2,'0');
-    m.textContent = String(Math.floor((total%3600)/60)).padStart(2,'0');
-    s.textContent = String(total%60).padStart(2,'0');
-  }, 1000);
+  function tick(){
+    const now = new Date();
+    const end = new Date(now);
+    end.setHours(23,59,59,0);
+    let diff = (end - now) / 1000;
+    if (diff < 0) diff += 86400;
+    const h = String(Math.floor(diff/3600)).padStart(2,'0');
+    const m = String(Math.floor((diff%3600)/60)).padStart(2,'0');
+    const s = String(Math.floor(diff%60)).padStart(2,'0');
+    document.getElementById('h').textContent = h;
+    document.getElementById('m').textContent = m;
+    document.getElementById('s').textContent = s;
+  }
+  tick(); setInterval(tick, 1000);
 
-  // Total update
-  const prices = {1: 175000, 2: 320000, 3: 450000};
-  function updateTotal() {
-    const q = document.getElementById('qty').value;
-    document.getElementById('total').textContent = 'Rp ' + prices[q].toLocaleString('id-ID');
+  // Toggle order form
+  function toggleForm(){
+    const form = document.getElementById('orderForm');
+    form.classList.toggle('open');
+    if (form.classList.contains('open')) {
+      setTimeout(() => form.scrollIntoView({behavior:'smooth', block:'start'}), 100);
+    }
   }
 
-  // Notification popup
-  const names = [
-    ['Andi', 'Bekasi'], ['Maya', 'Surabaya'], ['Rini', 'Bandung'],
-    ['Bu Siti', 'Jakarta'], ['Pak Joko', 'Yogyakarta'], ['Lina', 'Medan'],
-    ['Sari', 'Semarang'], ['Bu Tini', 'Palembang']
-  ];
-  const notif = document.getElementById('notif');
-  const nName = document.getElementById('notif-name');
-  const nMsg = document.getElementById('notif-msg');
-  function showNotif() {
-    const [n, c] = names[Math.floor(Math.random()*names.length)];
-    const qty = [1,1,1,2,3][Math.floor(Math.random()*5)];
-    const min = Math.floor(Math.random()*15)+1;
-    nName.textContent = `${n} dari ${c}`;
-    nMsg.textContent = `baru saja memesan ${qty} pcs · ${min} menit lalu`;
-    notif.classList.add('show');
-    setTimeout(() => notif.classList.remove('show'), 4000);
+  // Payment selection
+  function pickPayment(input){
+    document.querySelectorAll('.pay-opt').forEach(el => el.classList.remove('selected'));
+    input.closest('.pay-opt').classList.add('selected');
+    const price = parseInt(input.closest('.pay-opt').dataset.price);
+    document.getElementById('totalAmount').textContent = 'Rp ' + price.toLocaleString('id-ID');
   }
-  setTimeout(showNotif, 3000);
-  setInterval(showNotif, 12000);
+
+  // Submit order -> WhatsApp
+  function submitOrder(e){
+    e.preventDefault();
+    const f = e.target;
+    const data = {
+      nama: f.nama.value,
+      wa: f.wa.value,
+      jalan: f.jalan.value,
+      rtrw: f.rtrw.value,
+      nomor: f.nomor.value,
+      kelurahan: f.kelurahan.value,
+      payment: f.payment.value,
+    };
+    const price = data.payment === 'COD' ? 235000 : 220000;
+    const msg =
+`*PESANAN BARU - G-LAMP PRO X*
+
+Nama: ${data.nama}
+No. WA: ${data.wa}
+
+*Alamat Pengiriman:*
+Jalan: ${data.jalan}
+RT/RW: ${data.rtrw}
+No. Rumah: ${data.nomor}
+Kelurahan: ${data.kelurahan}
+
+*Pembayaran:* ${data.payment}
+*Total:* Rp ${price.toLocaleString('id-ID')}
+
+Mohon proses pesanan saya, terima kasih.`;
+
+    // Nomor WA admin
+    const adminWA = '6289528562097';
+    const url = `https://wa.me/${adminWA}?text=${encodeURIComponent(msg)}`;
+    document.getElementById('successMsg').classList.add('show');
+    // Langsung redirect ke WhatsApp (lebih reliable di mobile)
+    window.location.href = url;
+  }
 </script>
-
 </body>
 </html>
